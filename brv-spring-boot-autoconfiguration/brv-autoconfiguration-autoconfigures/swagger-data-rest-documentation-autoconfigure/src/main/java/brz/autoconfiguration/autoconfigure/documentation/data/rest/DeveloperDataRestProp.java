@@ -4,8 +4,8 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 @ConfigurationProperties("brz.documentation.data.rest.developer")
 public class DeveloperDataRestProp {
-	private String name= "Beeto Developer";
-	private String email= "example@beeto.com";
+	private String name= "brz Developer";
+	private String email= "example@brz.com";
 	private String url= "";
 	
 	public String getName() {

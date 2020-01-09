@@ -1,6 +1,5 @@
 package brz.autoconfiguration.autoconfigure.documentation.data.rest;
 
-
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
@@ -28,9 +27,8 @@ import java.util.ArrayList;
 @Configuration
 @EnableSwagger2WebMvc
 @Import(SpringDataRestConfiguration.class)
-@ConditionalOnProperty(name="beeto.documentation.data.rest.enable")
+@ConditionalOnProperty(name="brz.documentation.data.rest.enable")
 @EnableConfigurationProperties({DataRestAPIProperties.class, DeveloperDataRestProp.class})
-
 public class DataRestDocAutoConf {
 	@Autowired
 	DataRestAPIProperties apiProperties;

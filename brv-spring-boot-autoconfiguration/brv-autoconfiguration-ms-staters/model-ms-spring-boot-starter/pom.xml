@@ -7,8 +7,8 @@
   </parent>
   
   <groupId>brz.autoconfiguration.ms.starter.model</groupId>
-  <artifactId>brz-model-data-rest-ms-spring-boot-starter</artifactId>
-  <name>brz-model-data-rest-ms-spring-boot-starter</name>
+  <artifactId>brz-model-ms-spring-boot-starter</artifactId>
+  <name>brz-model-ms-spring-boot-starter</name>
   <version>1.0.0-SNAPSHOT</version>
   
   <properties>
