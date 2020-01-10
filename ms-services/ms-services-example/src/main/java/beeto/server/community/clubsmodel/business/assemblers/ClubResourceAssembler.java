@@ -1,6 +1,5 @@
 package beeto.server.community.clubsmodel.business.assemblers;
 
-import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.hateoas.mvc.ControllerLinkBuilder;
 import org.springframework.hateoas.mvc.ResourceAssemblerSupport;
 import org.springframework.stereotype.Component;
@@ -8,6 +7,7 @@ import org.springframework.stereotype.Component;
 import beeto.server.community.clubsmodel.persistence.entities.Club;
 import beeto.server.community.clubsmodel.presentation.controllers.ClubController;
 import beeto.server.community.clubsmodel.presentation.dtos.ClubResource;
+import brz.autoconfiguration.exceptionhandler.ResourceNotFoundException;
 
 @Component
 public class ClubResourceAssembler extends ResourceAssemblerSupport<Club, ClubResource>{

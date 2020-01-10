@@ -2,9 +2,8 @@ package beeto.server.community.clubsmodel.presentation.services;
 
 import java.util.List;
 
-import org.springframework.data.rest.webmvc.ResourceNotFoundException;
-
 import beeto.server.community.clubsmodel.presentation.dtos.ClubResource;
+import brz.autoconfiguration.exceptionhandler.ResourceNotFoundException;
 
 public interface ClubService {
 	ClubResource findById(String clubId)  throws ResourceNotFoundException;

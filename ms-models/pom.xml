@@ -15,5 +15,6 @@
   
   <modules>
     <module>ms-models-example</module> 
+    <module>ms-model-property</module> 
   </modules>
 </project>

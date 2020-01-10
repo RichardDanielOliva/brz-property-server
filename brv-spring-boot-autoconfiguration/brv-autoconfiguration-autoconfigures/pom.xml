@@ -13,8 +13,8 @@
   <name>brv-autoconfiguration-autoconfigures</name>
   
   <modules>
-  	<module>swagger-documentation-autoconfigure</module>
-    <module>swagger-data-rest-documentation-autoconfigure</module>
+  	<module>documentation-autoconfigure</module>
+    <module>data-rest-documentation-autoconfigure</module>
     <module>logging-autoconfigure</module>
     <module>exceptionhandler-autoconfigure</module>
   </modules>

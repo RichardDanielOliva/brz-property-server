@@ -21,8 +21,8 @@
 
 	<dependencies>
 		<dependency>
-		  <groupId>brz.autoconfiguration.ms.starter.model</groupId>
-		  <artifactId>brz-model-ms-spring-boot-starter</artifactId>
+			<groupId>brz.autoconfiguration.ms.starter.model</groupId>
+            <artifactId>brz-model-ms-spring-boot-starter</artifactId>
 		  <version>1.0.0-SNAPSHOT</version>
 		</dependency>
 	
