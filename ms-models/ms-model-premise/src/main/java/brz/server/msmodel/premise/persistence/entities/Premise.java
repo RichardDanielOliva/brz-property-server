@@ -1,4 +1,4 @@
-package brz.server.msmodel.home.persistence.entities;
+package brz.server.msmodel.premise.persistence.entities;
 
 import java.util.List;
 
@@ -11,22 +11,21 @@ import com.brz.commons.models.entities.property.EnergyCertificate;
 import com.brz.commons.models.entities.property.Property;
 import com.brz.commons.models.entities.property.State;
 
-@Document(collection = "homes")
-public class Home extends Property{
+@Document(collection = "promises")
+public class Premise extends Property{
 	@Id
     private String id;
-
+	private List<Extra> extras;
+	private State state;
+	
 	private double buildingArea;
 	private int baths;
 	private int floor;
-	private int rooms;
+	
+	private Type type;
 	
 	private BuildingAge buildingAge;
 	private EnergyCertificate energyCertificate;
-	private State status;
-	private Type type;
-	
-	private List<Extra> extras;
 	
 	public String getId() {
 		return id;
@@ -41,10 +40,10 @@ public class Home extends Property{
 		this.extras = extras;
 	}
 	public State getStatus() {
-		return status;
+		return state;
 	}
 	public void setStatus(State status) {
-		this.status = status;
+		this.state = status;
 	}
 	public double getBuildingArea() {
 		return buildingArea;
@@ -57,12 +56,6 @@ public class Home extends Property{
 	}
 	public void setBaths(int baths) {
 		this.baths = baths;
-	}
-	public int getRooms() {
-		return rooms;
-	}
-	public void setRooms(int rooms) {
-		this.rooms = rooms;
 	}
 	public BuildingAge getBuildingAge() {
 		return buildingAge;

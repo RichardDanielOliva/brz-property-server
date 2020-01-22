@@ -1,4 +1,4 @@
-package brz.server.msmodel.home;
+package brz.server.msmodel.land;
 
 import java.util.Arrays;
 
@@ -14,37 +14,32 @@ import com.brz.commons.models.entities.property.EnergyCertificate;
 import com.brz.commons.models.entities.property.Location;
 import com.brz.commons.models.entities.property.State;
 
-import brz.server.msmodel.home.persistence.entities.Extra;
-import brz.server.msmodel.home.persistence.entities.Home;
-import brz.server.msmodel.home.persistence.repositories.HomesRepository;
+import brz.server.msmodel.land.persistence.entities.ClassType;
+import brz.server.msmodel.land.persistence.entities.Land;
+import brz.server.msmodel.land.persistence.entities.MainLandUse;
+import brz.server.msmodel.land.persistence.repositories.LandRepository;
 
 @EnableEurekaClient
 @SpringBootApplication
-public class HomeModelApplication implements CommandLineRunner {
+public class LandModelApplication implements CommandLineRunner {
 	@Autowired
-	HomesRepository homesRepository;
+	LandRepository landRepository;
 	
 	public static void main(String[] args) {
-		SpringApplication.run(HomeModelApplication.class, args);
+		SpringApplication.run(LandModelApplication.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
-		Home newHome = new Home();
-		newHome.setArea(220.45f);
-		newHome.setBaths(2);
-		newHome.setBuildingAge(BuildingAge.BETWEEN_1951_1960);
-		newHome.setBuildingArea(150.45);
+		Land newHome = new Land();
+		newHome.setArea(500.45f);
+	
 		newHome.setComment("This is a comment");
-		newHome.setEnergyCertificate(EnergyCertificate.B);
-		newHome.setExtras(Arrays.asList(Extra.HEATING, Extra.PARKING, Extra.SWIMMING_POOL));
-		newHome.setRooms(2);
-		newHome.setStatus(State.NEW_HOME);
 
 		Location location = new Location();
-		location.setCity("Santiago de Compostela");
+		location.setCity("A Coruna");
 		location.setCountry("Spain");
-		location.setPostalCode("15703");
+		location.setPostalCode("15708");
 		location.setState("Galicia");
 		newHome.setLocation(location);
 		
@@ -53,6 +48,9 @@ public class HomeModelApplication implements CommandLineRunner {
 		advertiser.setType("user");
 		newHome.setAdvertiser(advertiser);
 		
-		//homesRepository.save(newHome);
+		newHome.setClassType(ClassType.RURAL);
+		newHome.setMainLandUse(MainLandUse.AGRARIAN);
+		
+		//landRepository.save(newHome);
 	}
 }

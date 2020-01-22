@@ -6,14 +6,17 @@ import javax.persistence.Id;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.brz.commons.models.entities.property.BuildingAge;
+import com.brz.commons.models.entities.property.EnergyCertificate;
 import com.brz.commons.models.entities.property.Property;
+import com.brz.commons.models.entities.property.State;
 
 @Document(collection = "offices")
 public class Office extends Property{
 	@Id
     private String id;
 	private List<Extra> extras;
-	private Status status;
+	private State status;
 	
 	private double buildingArea;
 	private int baths;
@@ -34,10 +37,10 @@ public class Office extends Property{
 	public void setExtras(List<Extra> extras) {
 		this.extras = extras;
 	}
-	public Status getStatus() {
+	public State getStatus() {
 		return status;
 	}
-	public void setStatus(Status status) {
+	public void setStatus(State status) {
 		this.status = status;
 	}
 	public double getBuildingArea() {

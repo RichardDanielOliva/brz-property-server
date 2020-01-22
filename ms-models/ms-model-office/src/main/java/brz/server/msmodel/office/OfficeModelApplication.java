@@ -9,13 +9,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 import com.brz.commons.models.entities.property.Advertiser;
+import com.brz.commons.models.entities.property.BuildingAge;
+import com.brz.commons.models.entities.property.EnergyCertificate;
 import com.brz.commons.models.entities.property.Location;
+import com.brz.commons.models.entities.property.State;
 
-import brz.server.msmodel.office.persistence.entities.BuildingAge;
-import brz.server.msmodel.office.persistence.entities.EnergyCertificate;
 import brz.server.msmodel.office.persistence.entities.Extra;
 import brz.server.msmodel.office.persistence.entities.Office;
-import brz.server.msmodel.office.persistence.entities.Status;
 import brz.server.msmodel.office.persistence.repositories.OfficeRepository;
 
 @EnableEurekaClient
@@ -38,7 +38,7 @@ public class OfficeModelApplication implements CommandLineRunner {
 		newHome.setComment("This is a comment");
 		newHome.setEnergyCertificate(EnergyCertificate.B);
 		newHome.setExtras(Arrays.asList(Extra.PARKING, Extra.WIFI));
-		newHome.setStatus(Status.NEW_OFFICE);
+		newHome.setStatus(State.NEW_OFFICE);
 
 		Location location = new Location();
 		location.setCity("A Coruna");

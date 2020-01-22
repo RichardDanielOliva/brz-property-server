@@ -1,4 +1,4 @@
-package brz.server.msmodel.office.persistence.entities;
+package com.brz.commons.models.entities.property;
 
 public enum BuildingAge {
 	BEFORE_1950,
