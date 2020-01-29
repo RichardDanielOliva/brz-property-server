@@ -1,9 +1,12 @@
 package brz.server.msmodel.building.persistence.entities;
 
+import org.springframework.data.mongodb.core.mapping.Field;
+
 public class PromisesFeature {
 	public PromisesFeature() {}
 	
 	private int units;
+	@Field("total_area")
 	private float totalArea;
 	
 	public float getTotalArea() {

@@ -1,6 +1,7 @@
 package brz.server.msmodel.office;
 
 import java.util.Arrays;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -12,7 +13,10 @@ import com.brz.commons.models.entities.property.Advertiser;
 import com.brz.commons.models.entities.property.BuildingAge;
 import com.brz.commons.models.entities.property.EnergyCertificate;
 import com.brz.commons.models.entities.property.Location;
+import com.brz.commons.models.entities.property.Operation;
 import com.brz.commons.models.entities.property.State;
+import com.brz.commons.models.entities.property.UserContact;
+import com.brz.commons.models.entities.property.UserRole;
 
 import brz.server.msmodel.office.persistence.entities.Extra;
 import brz.server.msmodel.office.persistence.entities.Office;
@@ -35,12 +39,12 @@ public class OfficeModelApplication implements CommandLineRunner {
 		newHome.setBaths(8);
 		newHome.setBuildingAge(BuildingAge.BETWEEN_2001_2010);
 		newHome.setBuildingArea(150.45);
-		newHome.setComment("This is a comment");
 		newHome.setEnergyCertificate(EnergyCertificate.B);
 		newHome.setExtras(Arrays.asList(Extra.PARKING, Extra.WIFI));
 		newHome.setStatus(State.NEW_OFFICE);
 
 		Location location = new Location();
+		location.setAddressed("Av de Lugo, 227");
 		location.setCity("A Coruna");
 		location.setCountry("Spain");
 		location.setPostalCode("15708");
@@ -48,8 +52,16 @@ public class OfficeModelApplication implements CommandLineRunner {
 		newHome.setLocation(location);
 		
 		Advertiser advertiser = new Advertiser();
+		advertiser.setUserId("0");
+		advertiser.setUserRole(UserRole.USER);
 		advertiser.setPropertyMessage("Excelent property");
-		advertiser.setType("user");
+		advertiser.setOperation(Operation.BUY);
+		advertiser.setPublishDate(new Date());
+		advertiser.setPrice(2000000f);
+		UserContact contactUser = new UserContact();
+		contactUser.setPhones(Arrays.asList("12345678", "87654321"));
+		contactUser.setEmails(Arrays.asList("example@example.com", "example2@example.com"));
+		advertiser.setUserContact(contactUser);
 		newHome.setAdvertiser(advertiser);
 		
 		//officesRepository.save(newHome);

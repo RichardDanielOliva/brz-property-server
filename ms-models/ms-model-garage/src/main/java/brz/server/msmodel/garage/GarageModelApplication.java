@@ -1,6 +1,7 @@
 package brz.server.msmodel.garage;
 
 import java.util.Arrays;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -10,7 +11,10 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 import com.brz.commons.models.entities.property.Advertiser;
 import com.brz.commons.models.entities.property.Location;
+import com.brz.commons.models.entities.property.Operation;
 import com.brz.commons.models.entities.property.State;
+import com.brz.commons.models.entities.property.UserContact;
+import com.brz.commons.models.entities.property.UserRole;
 
 import brz.server.msmodel.garage.persistence.entities.Extra;
 import brz.server.msmodel.garage.persistence.entities.Garage;
@@ -31,12 +35,11 @@ public class GarageModelApplication implements CommandLineRunner {
 		Garage newGarage = new Garage();
 		newGarage.setArea(10.45f);
 
-		newGarage.setComment("This is a comment");
-
 		newGarage.setExtras(Arrays.asList(Extra.POWER_DOOR));
 		newGarage.setStatus(State.NEW_GARAGE);
 
 		Location location = new Location();
+		location.setAddressed("Av de Lugo, 227");
 		location.setCity("A Coruna");
 		location.setCountry("Spain");
 		location.setPostalCode("15708");
@@ -44,8 +47,16 @@ public class GarageModelApplication implements CommandLineRunner {
 		newGarage.setLocation(location);
 		
 		Advertiser advertiser = new Advertiser();
+		advertiser.setUserId("0");
+		advertiser.setUserRole(UserRole.USER);
 		advertiser.setPropertyMessage("Excelent garages");
-		advertiser.setType("user");
+		advertiser.setOperation(Operation.BUY);
+		advertiser.setPublishDate(new Date());
+		advertiser.setPrice(2000000f);
+		UserContact contactUser = new UserContact();
+		contactUser.setPhones(Arrays.asList("12345678", "87654321"));
+		contactUser.setEmails(Arrays.asList("example@example.com", "example2@example.com"));
+		advertiser.setUserContact(contactUser);
 		newGarage.setAdvertiser(advertiser);
 		
 		garageRepository.save(newGarage);

@@ -3,6 +3,7 @@ package brz.server.msmodel.building.persistence.entities;
 import javax.persistence.Id;
 
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import com.brz.commons.models.entities.property.BuildingAge;
 import com.brz.commons.models.entities.property.Property;
@@ -15,10 +16,16 @@ public class Building extends Property{
 
 	private State status;
 	
+	@Field("building_area")
 	private double buildingArea;
+	
+	@Field("offices_feature")
 	private OfficesFeature officesFeature;
+	@Field("homes_feature")
 	private HomesFeature homesFeature;
+	@Field("promises_feature")
 	private PromisesFeature promisesFeature;
+	@Field("garages_feature")
 	private GaragesFeature garagesFeature;
 
 	private BuildingAge buildingAge;

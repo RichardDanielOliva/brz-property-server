@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.Id;
 
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import com.brz.commons.models.entities.property.BuildingAge;
 import com.brz.commons.models.entities.property.EnergyCertificate;
@@ -18,11 +19,13 @@ public class Office extends Property{
 	private List<Extra> extras;
 	private State status;
 	
+	@Field("building_area")
 	private double buildingArea;
 	private int baths;
 	private int floor;
-	
+	@Field("building_age")
 	private BuildingAge buildingAge;
+	@Field("energy_certificate")
 	private EnergyCertificate energyCertificate;
 	
 	public String getId() {

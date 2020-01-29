@@ -1,23 +1,22 @@
 package com.brz.commons.models.entities.property;
 
+import java.util.List;
+
+import org.springframework.data.mongodb.core.mapping.Field;
+
 public class Property {
+	@Field("cadastral_reference")
 	private String cadastralReference;
-	private String comment;
 	private float area;
 	private Location location;
 	private Advertiser advertiser;
+	private List<String> images;
 	
 	public String getCadastralReference() {
 		return cadastralReference;
 	}
 	public void setCadastralReference(String cadastralReference) {
 		this.cadastralReference = cadastralReference;
-	}
-	public String getComment() {
-		return comment;
-	}
-	public void setComment(String comment) {
-		this.comment = comment;
 	}
 	public float getArea() {
 		return area;
@@ -36,6 +35,12 @@ public class Property {
 	}
 	public void setAdvertiser(Advertiser advertiser) {
 		this.advertiser = advertiser;
+	}
+	public List<String> getImages() {
+		return images;
+	}
+	public void setImages(List<String> images) {
+		this.images = images;
 	}
 	
 	

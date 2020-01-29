@@ -1,6 +1,6 @@
 package com.brz.commons.models.entities.property;
 
-public enum Target {
+public enum Operation {
 	BUY,
 	RENT,
 	SHARE,

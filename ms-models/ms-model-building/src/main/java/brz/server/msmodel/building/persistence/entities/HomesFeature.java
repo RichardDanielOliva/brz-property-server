@@ -1,5 +1,7 @@
 package brz.server.msmodel.building.persistence.entities;
 
+import org.springframework.data.mongodb.core.mapping.Field;
+
 public class HomesFeature {
 
 	public HomesFeature() {
@@ -7,6 +9,7 @@ public class HomesFeature {
 	}
 	
 	private int units;
+	@Field("total_area")
 	private float totalArea;
 	
 	public int getUnits() {

@@ -3,6 +3,7 @@ package brz.server.msmodel.land.persistence.entities;
 import javax.persistence.Id;
 
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import com.brz.commons.models.entities.property.Property;
 
@@ -10,7 +11,9 @@ import com.brz.commons.models.entities.property.Property;
 public class Land extends Property{
 	@Id
     private String id;
-	private MainLandUse mainLandUse;
+	@Field("main_use")
+	private MainLandUse mainUse;
+	@Field("class_type")
 	private ClassType classType;
 	
 	public String getId() {
@@ -19,11 +22,11 @@ public class Land extends Property{
 	public void setId(String id) {
 		this.id = id;
 	}
-	public MainLandUse getMainLandUse() {
-		return mainLandUse;
+	public MainLandUse getMainUse() {
+		return mainUse;
 	}
-	public void setMainLandUse(MainLandUse mainLandUse) {
-		this.mainLandUse = mainLandUse;
+	public void setMainUse(MainLandUse mainLandUse) {
+		this.mainUse = mainLandUse;
 	}
 	public ClassType getClassType() {
 		return classType;

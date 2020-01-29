@@ -2,12 +2,17 @@ package com.brz.commons.models.entities.property;
 
 import java.io.Serializable;
 
+import org.springframework.data.mongodb.core.mapping.Field;
+
 public class Location implements Serializable{
+	private String addressed;
 	private String country;
 	private String state;
 	private String city;
-	private String strictId;
+	@Field("postal_code")
 	private String postalCode;
+	@Field("strict_id")
+	private String strictId;
 	
 	public String getCountry() {
 		return country;
@@ -40,5 +45,12 @@ public class Location implements Serializable{
 		this.postalCode = postalCode;
 	}
 	
+	public String getAddressed() {
+		return addressed;
+	}
+	public void setAddressed(String addressed) {
+		this.addressed = addressed;
+	}
+
 	private static final long serialVersionUID = 1L;
 }

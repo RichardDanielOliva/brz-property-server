@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.Id;
 
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import com.brz.commons.models.entities.property.BuildingAge;
 import com.brz.commons.models.entities.property.EnergyCertificate;
@@ -16,12 +17,14 @@ public class Home extends Property{
 	@Id
     private String id;
 
+	@Field("building_area")
 	private double buildingArea;
 	private int baths;
 	private int floor;
 	private int rooms;
-	
+	@Field("building_age")
 	private BuildingAge buildingAge;
+	@Field("energy_certificate")
 	private EnergyCertificate energyCertificate;
 	private State status;
 	private Type type;
