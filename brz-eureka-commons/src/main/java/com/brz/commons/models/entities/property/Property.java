@@ -4,6 +4,10 @@ import java.util.List;
 
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Property {
 	@Field("cadastral_reference")
 	private String cadastralReference;

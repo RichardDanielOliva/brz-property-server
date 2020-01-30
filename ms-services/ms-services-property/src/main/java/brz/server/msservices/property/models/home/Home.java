@@ -1,45 +1,35 @@
-package brz.server.msmodel.home.persistence.entities;
+package brz.server.msservices.property.models.home;
 
 import java.io.Serializable;
 import java.util.List;
-
-import javax.persistence.Id;
-
-import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
 
 import com.brz.commons.models.entities.property.BuildingAge;
 import com.brz.commons.models.entities.property.EnergyCertificate;
 import com.brz.commons.models.entities.property.Property;
 import com.brz.commons.models.entities.property.State;
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 @JsonInclude(Include.NON_NULL)
-@Document(collection = "homes")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Home extends Property implements Serializable{
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1L;
-
-	@Id
-    private String id;
-
-	@Field("building_area")
+	private String id;
 	private double buildingArea;
 	private int baths;
 	private int floor;
 	private int rooms;
-	@Field("building_age")
 	private BuildingAge buildingAge;
-	@Field("energy_certificate")
 	private EnergyCertificate energyCertificate;
 	private State status;
 	private Type type;
+	@JsonProperty("_links")
+	private HomeLinks links;
 	
-	private List<Extra> extras;
+	private List<String> extras;
 	
 	public String getId() {
 		return id;
@@ -47,10 +37,10 @@ public class Home extends Property implements Serializable{
 	public void setId(String id) {
 		this.id = id;
 	}
-	public List<Extra> getExtras() {
+	public List<String> getExtras() {
 		return extras;
 	}
-	public void setExtras(List<Extra> extras) {
+	public void setExtras(List<String> extras) {
 		this.extras = extras;
 	}
 	public State getStatus() {
@@ -101,5 +91,13 @@ public class Home extends Property implements Serializable{
 	public void setType(Type type) {
 		this.type = type;
 	}
+	public HomeLinks getLinks() {
+		return links;
+	}
+	public void setLinks(HomeLinks links) {
+		this.links = links;
+	}
+	
+	
 	
 }

@@ -20,6 +20,7 @@ import com.brz.commons.models.entities.property.UserRole;
 
 import brz.server.msmodel.home.persistence.entities.Extra;
 import brz.server.msmodel.home.persistence.entities.Home;
+import brz.server.msmodel.home.persistence.entities.Type;
 import brz.server.msmodel.home.persistence.repositories.HomesRepository;
 
 @EnableEurekaClient
@@ -42,6 +43,7 @@ public class HomeModelApplication implements CommandLineRunner {
 		newHome.setEnergyCertificate(EnergyCertificate.B);
 		newHome.setExtras(Arrays.asList(Extra.HEATING, Extra.PARKING, Extra.SWIMMING_POOL));
 		newHome.setRooms(2);
+		newHome.setType(Type.APARTMENT);
 		newHome.setStatus(State.NEW_HOME);
 
 		Location location = new Location();
@@ -65,6 +67,6 @@ public class HomeModelApplication implements CommandLineRunner {
 		advertiser.setUserContact(contactUser);
 		newHome.setAdvertiser(advertiser);
 		
-		//homesRepository.save(newHome);
+		homesRepository.save(newHome);
 	}
 }

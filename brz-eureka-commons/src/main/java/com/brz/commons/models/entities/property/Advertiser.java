@@ -2,8 +2,13 @@ package com.brz.commons.models.entities.property;
 
 import java.util.Date;
 
+
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+@JsonInclude(Include.NON_NULL)
 public class Advertiser {
 	@Field("user_id")
 	private String userId;

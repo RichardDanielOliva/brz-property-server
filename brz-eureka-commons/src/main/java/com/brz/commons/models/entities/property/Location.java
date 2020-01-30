@@ -4,6 +4,10 @@ import java.io.Serializable;
 
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+@JsonInclude(Include.NON_NULL)
 public class Location implements Serializable{
 	private String addressed;
 	private String country;

@@ -2,6 +2,10 @@ package com.brz.commons.models.entities.property;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+
+@JsonInclude(Include.NON_NULL)
 public class UserContact {
 	private List<String> phones;
 	private List<String> emails;
