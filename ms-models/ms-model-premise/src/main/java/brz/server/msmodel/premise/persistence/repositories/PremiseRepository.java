@@ -5,6 +5,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import brz.server.msmodel.premise.persistence.entities.Premise;
 
-@RepositoryRestResource(path = "premise")
+@RepositoryRestResource(path = "premises")
 public interface PremiseRepository extends MongoRepository<Premise, String> {
 }

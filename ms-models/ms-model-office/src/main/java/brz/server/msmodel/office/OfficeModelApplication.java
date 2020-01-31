@@ -64,6 +64,6 @@ public class OfficeModelApplication implements CommandLineRunner {
 		advertiser.setUserContact(contactUser);
 		newHome.setAdvertiser(advertiser);
 		
-		//officesRepository.save(newHome);
+		officesRepository.save(newHome);
 	}
 }

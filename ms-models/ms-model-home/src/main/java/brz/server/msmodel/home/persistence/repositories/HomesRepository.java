@@ -7,6 +7,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import brz.server.msmodel.home.persistence.entities.Home;
 
-@RepositoryRestResource(path = "homes")
+@RepositoryRestResource(path = "")
 public interface HomesRepository extends MongoRepository<Home, String> {
 }
