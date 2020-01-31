@@ -67,6 +67,6 @@ public class HomeModelApplication implements CommandLineRunner {
 		advertiser.setUserContact(contactUser);
 		newHome.setAdvertiser(advertiser);
 		
-		homesRepository.save(newHome);
+		//homesRepository.save(newHome);
 	}
 }

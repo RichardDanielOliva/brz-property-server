@@ -64,6 +64,6 @@ public class PromiseModelApplication implements CommandLineRunner {
 		advertiser.setUserContact(contactUser);
 		newPromise.setAdvertiser(advertiser);
 		
-		promiseRepository.save(newPromise);
+		//promiseRepository.save(newPromise);
 	}
 }
