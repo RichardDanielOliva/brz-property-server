@@ -15,6 +15,7 @@ public class Property {
 	private Location location;
 	private Advertiser advertiser;
 	private List<String> images;
+	private Geometry geometry;
 	
 	public String getCadastralReference() {
 		return cadastralReference;
@@ -45,6 +46,12 @@ public class Property {
 	}
 	public void setImages(List<String> images) {
 		this.images = images;
+	}
+	public Geometry getGeometry() {
+		return geometry;
+	}
+	public void setGeometry(Geometry geometry) {
+		this.geometry = geometry;
 	}
 	
 	
