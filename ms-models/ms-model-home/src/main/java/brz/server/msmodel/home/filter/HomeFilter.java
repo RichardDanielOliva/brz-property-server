@@ -19,8 +19,10 @@ public class HomeFilter extends PropertyFilter {
 	public String toString() {
 		return "HomeFilter [features=" + features + ", getType()=" + getType() + ", getOperation()=" + getOperation()
 				+ ", getPrice()=" + getPrice() + ", getArea()=" + getArea() + ", getStatus()=" + getStatus()
-				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
-				+ "]";
+				+ ", getLocation()=" + getLocation() + ", getClass()=" + getClass() + ", hashCode()=" + hashCode()
+				+ ", toString()=" + super.toString() + "]";
 	}
+
+
 	
 }

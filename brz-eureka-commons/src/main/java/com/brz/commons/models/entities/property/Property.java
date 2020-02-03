@@ -2,6 +2,8 @@ package com.brz.commons.models.entities.property;
 
 import java.util.List;
 
+import org.springframework.data.mongodb.core.index.GeoSpatialIndexType;
+import org.springframework.data.mongodb.core.index.GeoSpatialIndexed;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -15,6 +17,8 @@ public class Property {
 	private Location location;
 	private Advertiser advertiser;
 	private List<String> images;
+	
+	@GeoSpatialIndexed(type = GeoSpatialIndexType.GEO_2DSPHERE,name = "geometry_index")
 	private Geometry geometry;
 	
 	public String getCadastralReference() {

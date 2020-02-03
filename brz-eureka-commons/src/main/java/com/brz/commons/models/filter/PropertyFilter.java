@@ -12,6 +12,8 @@ public class PropertyFilter {
 	private Price price;
 	private Area area;
 	private List<State> status;
+	private Location location;
+	
 	public PropertyType getType() {
 		return type;
 	}
@@ -42,8 +44,14 @@ public class PropertyFilter {
 	public void setStatus(List<State> status) {
 		this.status = status;
 	}
+	public Location getLocation() {
+		return location;
+	}
+	public void setLocation(Location location) {
+		this.location = location;
+	}
 	
-
+	
 	
 	
 }

@@ -7,6 +7,7 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import com.brz.commons.models.entities.property.Operation;
 import com.brz.commons.models.entities.property.State;
 import com.brz.commons.models.filter.Area;
+import com.brz.commons.models.filter.Location;
 import com.brz.commons.models.filter.Price;
 
 public class HomesCriterias {
@@ -47,6 +48,19 @@ public class HomesCriterias {
 			
 			if(0 != price.getMax())
 				criterias.add(Criteria.where("advertiser.price").lte(price.getMax()));
+		}
+			
+		return criterias;
+	}
+	
+	public static List<Criteria> getCriteriaLocation(Location location, List<Criteria> criterias) {
+		if(null != location) {
+			System.out.println(location);
+			criterias.add(Criteria.where("geometry")
+								.nearSphere(location.getCoordinates())
+								.maxDistance(5));
+								//.maxDistance(location.getMaxDistance())
+								//.minDistance(location.getMinDistance()));
 		}
 			
 		return criterias;
