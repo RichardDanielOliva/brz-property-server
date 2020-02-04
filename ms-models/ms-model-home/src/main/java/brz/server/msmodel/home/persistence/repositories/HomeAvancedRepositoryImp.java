@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.geo.GeoResult;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.index.GeoSpatialIndexType;
 import org.springframework.data.mongodb.core.index.GeospatialIndex;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.NearQuery;
@@ -72,13 +73,12 @@ public class HomeAvancedRepositoryImp implements HomeAvancedRepository {
 		
 		if(0 != criterias.size()) { //Comprobamos que los criterios de la sentancia no estan vacios
 			query.addCriteria(new Criteria().andOperator(criterias.toArray(new Criteria[criterias.size()])));
-			
-			System.out.println(query.fields());
-			//mongoTemplate.indexOps(Geometry.class).ensureIndex(new GeospatialIndex("geometry_2d"));
+			System.out.println(criterias.toArray(new Criteria[criterias.size()]));
+			//mongoTemplate.indexOps(Home.class).ensureIndex(new GeospatialIndex("geometry.coordinates").named("geometry.coordinates_2d").typed(GeoSpatialIndexType.GEO_2D));
 			
 			//NearQuery nearQuery = NearQuery.near(homefilter.getLocation().getCoordinates().getX(), homefilter.getLocation().getCoordinates().getY());
 			
-			//nearQuery.maxDistance(5000.00);
+			//nearQuery.maxDistance(0.005);
 			//nearQuery.query(query);
 			//return mongoTemplate.geoNear(nearQuery, Home.class)
 				//	.getContent().stream().map(GeoResult::getContent).collect(Collectors.toList());

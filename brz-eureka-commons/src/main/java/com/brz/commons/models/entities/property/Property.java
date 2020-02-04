@@ -2,6 +2,7 @@ package com.brz.commons.models.entities.property;
 
 import java.util.List;
 
+import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.data.mongodb.core.index.GeoSpatialIndexType;
 import org.springframework.data.mongodb.core.index.GeoSpatialIndexed;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -19,7 +20,7 @@ public class Property {
 	private List<String> images;
 	
 	@GeoSpatialIndexed(type = GeoSpatialIndexType.GEO_2DSPHERE,name = "geometry_index")
-	private Geometry geometry;
+	private GeoJsonPoint geometry;
 	
 	public String getCadastralReference() {
 		return cadastralReference;
@@ -51,12 +52,13 @@ public class Property {
 	public void setImages(List<String> images) {
 		this.images = images;
 	}
-	public Geometry getGeometry() {
+	public GeoJsonPoint getGeometry() {
 		return geometry;
 	}
-	public void setGeometry(Geometry geometry) {
+	public void setGeometry(GeoJsonPoint geometry) {
 		this.geometry = geometry;
 	}
+
 	
 	
 }

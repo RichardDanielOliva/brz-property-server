@@ -1,7 +1,9 @@
 package brz.server.msmodel.home.filter;
 
+import java.util.LinkedHashMap;
 import java.util.List;
 
+import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.data.mongodb.core.query.Criteria;
 
 import com.brz.commons.models.entities.property.Operation;
@@ -57,10 +59,9 @@ public class HomesCriterias {
 		if(null != location) {
 			System.out.println(location);
 			criterias.add(Criteria.where("geometry")
-								.nearSphere(location.getCoordinates())
-								.maxDistance(5));
-								//.maxDistance(location.getMaxDistance())
-								//.minDistance(location.getMinDistance()));
+							.nearSphere(
+									new GeoJsonPoint(location.getCoordinates())) 
+							.maxDistance(location.getMaxDistance()));
 		}
 			
 		return criterias;
