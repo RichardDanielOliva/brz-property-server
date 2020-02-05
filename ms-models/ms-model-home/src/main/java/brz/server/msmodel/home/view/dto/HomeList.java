@@ -1,4 +1,4 @@
-package brz.server.msmodel.home.Controller;
+package brz.server.msmodel.home.view.dto;
 
 import java.util.ArrayList;
 import java.util.List;

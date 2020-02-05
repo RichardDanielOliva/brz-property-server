@@ -1,4 +1,4 @@
-package brz.server.msmodel.home.filter;
+package com.brz.commons.models.filter;
 
 import com.brz.commons.models.filter.PropertyFilter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;

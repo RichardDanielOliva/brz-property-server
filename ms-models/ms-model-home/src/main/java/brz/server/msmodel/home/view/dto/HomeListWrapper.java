@@ -1,4 +1,4 @@
-package brz.server.msmodel.home.Controller;
+package brz.server.msmodel.home.view.dto;
 
 import com.brz.commons.models.entities.util.Page;
 import com.fasterxml.jackson.annotation.JsonProperty;
