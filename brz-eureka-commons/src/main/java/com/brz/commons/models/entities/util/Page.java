@@ -3,9 +3,17 @@ package com.brz.commons.models.entities.util;
 public class Page {
 	public Page() {}
 
+	public Page(int size, long totalElements, long totalPages, int number) {
+		super();
+		this.size = size;
+		this.totalElements = totalElements;
+		this.totalPages = totalPages;
+		this.number = number;
+	}
+
 	private int size;
-	private int totalElements;
-	private int totalPages;
+	private long totalElements;
+	private long totalPages;
 	private int number;
 	
 	public int getSize() {
@@ -14,16 +22,16 @@ public class Page {
 	public void setSize(int size) {
 		this.size = size;
 	}
-	public int getTotalElements() {
+	public long getTotalElements() {
 		return totalElements;
 	}
-	public void setTotalElements(int totalElements) {
+	public void setTotalElements(long totalElements) {
 		this.totalElements = totalElements;
 	}
-	public int getTotalPages() {
+	public long getTotalPages() {
 		return totalPages;
 	}
-	public void setTotalPages(int totalPages) {
+	public void setTotalPages(long totalPages) {
 		this.totalPages = totalPages;
 	}
 	public int getNumber() {

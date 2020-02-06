@@ -1,4 +1,4 @@
-package brz.server.msmodel.office.persistence.entities;
+package com.brz.commons.models.entities.office;
 
 import java.util.List;
 
@@ -11,10 +11,7 @@ import com.brz.commons.models.entities.property.BuildingAge;
 import com.brz.commons.models.entities.property.EnergyCertificate;
 import com.brz.commons.models.entities.property.Property;
 import com.brz.commons.models.entities.property.State;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-@JsonInclude(Include.NON_NULL)
 @Document(collection = "offices")
 public class Office extends Property{
 	@Id

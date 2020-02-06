@@ -1,4 +1,4 @@
-package com.brz.commons.models.filter;
+package com.brz.commons.models.filter.features;
 
 import java.util.List;
 

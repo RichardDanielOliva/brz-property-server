@@ -7,6 +7,8 @@ import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.data.mongodb.core.query.Criteria;
 
 import com.brz.commons.models.filter.HomeFilter;
+import com.brz.commons.models.filter.OfficeFilter;
+import com.brz.commons.models.filter.PremiseFilter;
 import com.brz.commons.models.filter.PropertyFilter;
 
 
@@ -92,6 +94,30 @@ public class PropertyCriteriaBuilder {
 			
 			if(null != homeFilter.getFeatures().getExtras())
 				criterias.add(Criteria.where("extras").in(homeFilter.getFeatures().getExtras()));
+			
+			}
+		
+		return this;
+	}
+	
+	public PropertyCriteriaBuilder setCriteriaForPremiseFeature(PremiseFilter premiseFilter) {
+		if(null != premiseFilter.getFeatures()) {
+		
+			if(null != premiseFilter.getFeatures().getTypes())
+				criterias.add(Criteria.where("type").in(premiseFilter.getFeatures().getTypes()));
+			
+			if(null != premiseFilter.getFeatures().getExtras())
+				criterias.add(Criteria.where("extras").in(premiseFilter.getFeatures().getExtras()));
+			}
+		
+		return this;
+	}
+	
+	public PropertyCriteriaBuilder setCriteriaForOfficesFeature(OfficeFilter officeFilter) {
+		if(null != officeFilter.getFeatures()) {
+			
+			if(null != officeFilter.getFeatures().getExtras())
+				criterias.add(Criteria.where("extras").in(officeFilter.getFeatures().getExtras()));
 			
 			}
 		

@@ -1,6 +1,7 @@
 package com.brz.commons.models.filter;
 
 import com.brz.commons.models.filter.PropertyFilter;
+import com.brz.commons.models.filter.features.FeatureHomeFilter;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)

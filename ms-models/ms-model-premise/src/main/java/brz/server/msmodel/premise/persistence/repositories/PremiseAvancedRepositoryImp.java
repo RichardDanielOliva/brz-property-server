@@ -1,4 +1,4 @@
-package brz.server.msmodel.home.persistence.repositories;
+package brz.server.msmodel.premise.persistence.repositories;
 
 import java.util.List;
 
@@ -11,28 +11,26 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
+import com.brz.commons.models.entities.premise.Premise;
 import com.brz.commons.models.entities.util.Page;
 import com.brz.commons.models.entities.util.PropertyCriteriaBuilder;
 import com.brz.commons.models.entities.util.Sorted;
-import com.brz.commons.models.filter.HomeFilter;
-
-
-import brz.server.msmodel.home.persistence.entities.Home;
-import brz.server.msmodel.home.persistence.repositories.HomeAvancedRepository;
+import com.brz.commons.models.filter.OfficeFilter;
+import com.brz.commons.models.filter.PremiseFilter;
 
 @Service
-public class HomeAvancedRepositoryImp implements HomeAvancedRepository {
+public class PremiseAvancedRepositoryImp implements PremiseAvancedRepository {
 
 	private final MongoTemplate mongoTemplate;
 	 
 	@Autowired
-	public HomeAvancedRepositoryImp(MongoTemplate mongoTemplate) {
+	public PremiseAvancedRepositoryImp(MongoTemplate mongoTemplate) {
 		this.mongoTemplate = mongoTemplate;
 	}
 
 	@Override
-	public List<Home> findByFilter(HomeFilter homefilter) {
-		List<Criteria> criterias = getCriteriasByFilter(homefilter);
+	public List<Premise> findByFilter(PremiseFilter premisefilter) {
+		List<Criteria> criterias = getCriteriasByFilter(premisefilter);
 
 		
 		if(0 != criterias.size()) { //Comprobamos que los criterios de la sentancia no estan vacios
@@ -42,17 +40,30 @@ public class HomeAvancedRepositoryImp implements HomeAvancedRepository {
 			
 			query.with(
 					PageRequest.of(
-							homefilter.getPage().getNumber(), 
-							homefilter.getPage().getSize()));
+							premisefilter.getPage().getNumber(), 
+							premisefilter.getPage().getSize()));
 			
-			return mongoTemplate.find(query, Home.class);
+			return mongoTemplate.find(query, Premise.class);
 		}
 
 		return  null;
 	}
 	
 	@Override
-	public List<Home> findByCriteriasAndPage(List<Criteria> criterias, Page page) {		
+	public List<Criteria> getCriteriasByFilter(PremiseFilter premisefilter){
+		PropertyCriteriaBuilder criteriaBuilder = new PropertyCriteriaBuilder();
+		return criteriaBuilder
+				.setFilter(premisefilter)
+				.setCriteriaForPremiseFeature(premisefilter)
+				.setCriteriaOperation()
+				.setCriteriaPrice()
+				.setCriteriaBuildingArea()
+				.setCriteriaLocation()
+				.build();
+	}
+	
+	@Override
+	public List<Premise> findByCriteriasAndPage(List<Criteria> criterias, Page page) {		
 		if(0 != criterias.size()) { //Comprobamos que los criterios de la sentancia no estan vacios
 			Query query = new Query();
 			
@@ -63,14 +74,14 @@ public class HomeAvancedRepositoryImp implements HomeAvancedRepository {
 							page.getNumber(), 
 							page.getSize()));
 			
-			return mongoTemplate.find(query, Home.class);
+			return mongoTemplate.find(query, Premise.class);
 		}
 
 		return  null;
 	}
 	
 	@Override
-	public List<Home> findByCriteriasAndPageAndSorted(List<Criteria> criterias, Page page, Sorted sorted) {		
+	public List<Premise> findByCriteriasAndPageAndSorted(List<Criteria> criterias, Page page, Sorted sorted) {		
 		if(0 != criterias.size()) { //Comprobamos que los criterios de la sentancia no estan vacios
 			Query query = new Query();
 			
@@ -83,7 +94,7 @@ public class HomeAvancedRepositoryImp implements HomeAvancedRepository {
 			
 			query.with(getSortByFilter(sorted));
 			
-			return mongoTemplate.find(query, Home.class);
+			return mongoTemplate.find(query, Premise.class);
 		}
 
 		return  null;
@@ -104,20 +115,6 @@ public class HomeAvancedRepositoryImp implements HomeAvancedRepository {
 			return null;
 		}
 	}
-
-	@Override
-	public List<Criteria> getCriteriasByFilter(HomeFilter homefilter){
-		PropertyCriteriaBuilder criteriaBuilder = new PropertyCriteriaBuilder();
-		return criteriaBuilder
-				.setFilter(homefilter)
-				.setCriteriaForHomeFeature(homefilter)
-				.setCriteriaOperation()
-				.setCriteriaStatus()
-				.setCriteriaPrice()
-				.setCriteriaBuildingArea()
-				.setCriteriaLocation()
-				.build();
-	}
 	
 	@Override
 	public long countByCriterias(List<Criteria> criterias) {
@@ -126,7 +123,7 @@ public class HomeAvancedRepositoryImp implements HomeAvancedRepository {
 			
 			query.addCriteria(new Criteria().andOperator(criterias.toArray(new Criteria[criterias.size()])));
 			
-			return mongoTemplate.count(query, Home.class);
+			return mongoTemplate.count(query, Premise.class);
 		}
 
 		return  0;

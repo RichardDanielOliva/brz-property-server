@@ -1,34 +1,30 @@
-package brz.server.msmodel.office.persistence.entities;
+package com.brz.commons.models.entities.premise;
 
 import java.util.List;
 
 import javax.persistence.Id;
 
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
 
 import com.brz.commons.models.entities.property.BuildingAge;
 import com.brz.commons.models.entities.property.EnergyCertificate;
 import com.brz.commons.models.entities.property.Property;
 import com.brz.commons.models.entities.property.State;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
-@JsonInclude(Include.NON_NULL)
-@Document(collection = "offices")
-public class Office extends Property{
+@Document(collection = "promises")
+public class Premise extends Property{
 	@Id
     private String id;
 	private List<Extra> extras;
-	private State status;
+	private State state;
 	
-	@Field("building_area")
 	private double buildingArea;
 	private int baths;
 	private int floor;
-	@Field("building_age")
+	
+	private Type type;
+	
 	private BuildingAge buildingAge;
-	@Field("energy_certificate")
 	private EnergyCertificate energyCertificate;
 	
 	public String getId() {
@@ -44,10 +40,10 @@ public class Office extends Property{
 		this.extras = extras;
 	}
 	public State getStatus() {
-		return status;
+		return state;
 	}
 	public void setStatus(State status) {
-		this.status = status;
+		this.state = status;
 	}
 	public double getBuildingArea() {
 		return buildingArea;
@@ -78,6 +74,12 @@ public class Office extends Property{
 	}
 	public void setFloor(int floor) {
 		this.floor = floor;
+	}
+	public Type getType() {
+		return type;
+	}
+	public void setType(Type type) {
+		this.type = type;
 	}
 	
 }

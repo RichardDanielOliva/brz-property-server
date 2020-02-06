@@ -5,6 +5,8 @@ import java.util.List;
 import com.brz.commons.models.entities.property.Operation;
 import com.brz.commons.models.entities.property.PropertyType;
 import com.brz.commons.models.entities.property.State;
+import com.brz.commons.models.entities.util.Page;
+import com.brz.commons.models.entities.util.Sorted;
 
 public class PropertyFilter {
 	private PropertyType type;
@@ -13,6 +15,8 @@ public class PropertyFilter {
 	private Area area;
 	private List<State> status;
 	private Location location;
+    private Page page;
+	private Sorted sortBy;
 	
 	public PropertyType getType() {
 		return type;
@@ -49,6 +53,18 @@ public class PropertyFilter {
 	}
 	public void setLocation(Location location) {
 		this.location = location;
+	}
+	public Page getPage() {
+		return page;
+	}
+	public void setPage(Page page) {
+		this.page = page;
+	}
+	public Sorted getSortBy() {
+		return sortBy;
+	}
+	public void setSortBy(Sorted sortBy) {
+		this.sortBy = sortBy;
 	}
 	
 	
