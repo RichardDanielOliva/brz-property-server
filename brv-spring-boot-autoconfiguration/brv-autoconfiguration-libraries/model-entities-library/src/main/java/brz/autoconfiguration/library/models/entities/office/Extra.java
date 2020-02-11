@@ -1,4 +1,4 @@
-package brz.server.msmodel.office.persistence.entities;
+package brz.autoconfiguration.library.models.entities.office;
 
 public enum Extra {
 	PARKING,

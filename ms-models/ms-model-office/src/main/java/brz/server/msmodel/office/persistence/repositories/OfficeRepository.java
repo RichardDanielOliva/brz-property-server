@@ -9,7 +9,7 @@ import org.springframework.data.rest.core.annotation.RestResource;
 
 import com.brz.commons.models.entities.property.Operation;
 
-import brz.server.msmodel.office.persistence.entities.Office;
+import brz.autoconfiguration.library.models.entities.office.Office;
 
 @RepositoryRestResource(path = "offices")
 public interface OfficeRepository extends MongoRepository<Office, String> {

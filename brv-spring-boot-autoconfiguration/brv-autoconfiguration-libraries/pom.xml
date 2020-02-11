@@ -14,5 +14,6 @@
   
   <modules>
   	<module>logging-library</module>
+  	<module>model-entities-library</module>
   </modules>
 </project>

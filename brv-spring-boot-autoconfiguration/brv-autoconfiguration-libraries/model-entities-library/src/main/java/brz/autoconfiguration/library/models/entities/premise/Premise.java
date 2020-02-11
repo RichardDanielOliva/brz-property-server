@@ -1,4 +1,4 @@
-package brz.server.msmodel.premise.persistence.entities;
+package brz.autoconfiguration.library.models.entities.premise;
 
 import java.util.List;
 
@@ -6,10 +6,10 @@ import javax.persistence.Id;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import com.brz.commons.models.entities.property.BuildingAge;
-import com.brz.commons.models.entities.property.EnergyCertificate;
-import com.brz.commons.models.entities.property.Property;
-import com.brz.commons.models.entities.property.State;
+import brz.autoconfiguration.library.models.entities.property.BuildingAge;
+import brz.autoconfiguration.library.models.entities.property.EnergyCertificate;
+import brz.autoconfiguration.library.models.entities.property.Property;
+import brz.autoconfiguration.library.models.entities.property.State;
 
 @Document(collection = "promises")
 public class Premise extends Property{

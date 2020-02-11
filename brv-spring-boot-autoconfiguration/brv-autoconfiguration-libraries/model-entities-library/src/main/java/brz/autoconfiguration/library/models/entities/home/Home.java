@@ -1,4 +1,4 @@
-package brz.server.msmodel.home.persistence.entities;
+package brz.autoconfiguration.library.models.entities.home;
 
 import java.io.Serializable;
 import java.util.List;
@@ -8,10 +8,10 @@ import javax.persistence.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import com.brz.commons.models.entities.property.BuildingAge;
-import com.brz.commons.models.entities.property.EnergyCertificate;
-import com.brz.commons.models.entities.property.Property;
-import com.brz.commons.models.entities.property.State;
+import brz.autoconfiguration.library.models.entities.property.BuildingAge;
+import brz.autoconfiguration.library.models.entities.property.EnergyCertificate;
+import brz.autoconfiguration.library.models.entities.property.Property;
+import brz.autoconfiguration.library.models.entities.property.State;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;

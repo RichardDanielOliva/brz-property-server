@@ -6,14 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.stereotype.Service;
 
-import com.brz.commons.models.entities.util.Page;
-import com.brz.commons.models.entities.util.PropertyList;
-import com.brz.commons.models.entities.util.PropertyListWrapper;
-import com.brz.commons.models.filter.OfficeFilter;
-
-import brz.server.msmodel.office.persistence.entities.Office;
+import brz.autoconfiguration.library.models.entities.office.Office;
+import brz.autoconfiguration.library.models.entities.util.Page;
+import brz.autoconfiguration.library.models.entities.util.PropertyList;
+import brz.autoconfiguration.library.models.entities.util.PropertyListWrapper;
+import brz.autoconfiguration.library.models.filter.OfficeFilter;
 import brz.server.msmodel.office.persistence.repositories.OfficeAvancedRepository;
-
 
 @Service
 public class OfficeServicesImpl implements OfficesService {

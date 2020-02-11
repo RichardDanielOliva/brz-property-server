@@ -4,10 +4,10 @@ import java.util.List;
 
 import org.springframework.data.mongodb.core.query.Criteria;
 
-import com.brz.commons.models.entities.premise.Premise;
-import com.brz.commons.models.entities.util.Page;
-import com.brz.commons.models.entities.util.Sorted;
-import com.brz.commons.models.filter.PremiseFilter;
+import brz.autoconfiguration.library.models.entities.premise.Premise;
+import brz.autoconfiguration.library.models.entities.util.Page;
+import brz.autoconfiguration.library.models.entities.util.Sorted;
+import brz.autoconfiguration.library.models.filter.PremiseFilter;
 
 public interface PremiseAvancedRepository {
 	List<Premise> findByFilter(PremiseFilter premisefilter);

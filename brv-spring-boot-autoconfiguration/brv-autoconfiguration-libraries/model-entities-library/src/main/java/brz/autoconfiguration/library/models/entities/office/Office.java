@@ -1,4 +1,4 @@
-package brz.server.msmodel.office.persistence.entities;
+package brz.autoconfiguration.library.models.entities.office;
 
 import java.util.List;
 
@@ -7,14 +7,11 @@ import javax.persistence.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import com.brz.commons.models.entities.property.BuildingAge;
-import com.brz.commons.models.entities.property.EnergyCertificate;
-import com.brz.commons.models.entities.property.Property;
-import com.brz.commons.models.entities.property.State;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import brz.autoconfiguration.library.models.entities.property.BuildingAge;
+import brz.autoconfiguration.library.models.entities.property.EnergyCertificate;
+import brz.autoconfiguration.library.models.entities.property.Property;
+import brz.autoconfiguration.library.models.entities.property.State;
 
-@JsonInclude(Include.NON_NULL)
 @Document(collection = "offices")
 public class Office extends Property{
 	@Id

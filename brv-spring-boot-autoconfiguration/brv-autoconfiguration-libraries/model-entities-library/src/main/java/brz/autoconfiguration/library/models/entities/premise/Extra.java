@@ -1,4 +1,4 @@
-package brz.server.msmodel.premise.persistence.entities;
+package brz.autoconfiguration.library.models.entities.premise;
 
 public enum Extra {
 	AIR_CONDITIONING,

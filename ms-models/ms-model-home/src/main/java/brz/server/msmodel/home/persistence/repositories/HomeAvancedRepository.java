@@ -4,11 +4,10 @@ import java.util.List;
 
 import org.springframework.data.mongodb.core.query.Criteria;
 
-import com.brz.commons.models.entities.util.Page;
-import com.brz.commons.models.entities.util.Sorted;
-import com.brz.commons.models.filter.HomeFilter;
-
-import brz.server.msmodel.home.persistence.entities.Home;
+import brz.autoconfiguration.library.models.entities.home.Home;
+import brz.autoconfiguration.library.models.entities.util.Page;
+import brz.autoconfiguration.library.models.entities.util.Sorted;
+import brz.autoconfiguration.library.models.filter.HomeFilter;
 
 public interface HomeAvancedRepository {
 	List<Home> findByFilter(HomeFilter homefilter);

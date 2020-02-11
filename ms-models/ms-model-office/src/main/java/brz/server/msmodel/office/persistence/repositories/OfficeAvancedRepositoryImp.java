@@ -11,13 +11,11 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
-import com.brz.commons.models.entities.util.Page;
-import com.brz.commons.models.entities.util.PropertyCriteriaBuilder;
-import com.brz.commons.models.entities.util.Sorted;
-import com.brz.commons.models.filter.OfficeFilter;
-
-import brz.server.msmodel.office.persistence.entities.Office;
-
+import brz.autoconfiguration.library.models.entities.office.Office;
+import brz.autoconfiguration.library.models.entities.util.Page;
+import brz.autoconfiguration.library.models.entities.util.PropertyCriteriaBuilder;
+import brz.autoconfiguration.library.models.entities.util.Sorted;
+import brz.autoconfiguration.library.models.filter.OfficeFilter;
 
 @Service
 public class OfficeAvancedRepositoryImp implements OfficeAvancedRepository {

@@ -4,8 +4,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 
-import brz.server.msmodel.home.persistence.entities.Home;
-
+import brz.autoconfiguration.library.models.entities.home.Home;
 
 @Configuration
 public class RepositoryConfig implements RepositoryRestConfigurer{

@@ -9,7 +9,7 @@ import org.springframework.data.rest.core.annotation.RestResource;
 
 import com.brz.commons.models.entities.property.Operation;
 
-import brz.server.msmodel.premise.persistence.entities.Premise;
+import brz.autoconfiguration.library.models.entities.premise.Premise;
 
 @RepositoryRestResource(path = "premises")
 public interface PremiseRepository extends MongoRepository<Premise, String> {

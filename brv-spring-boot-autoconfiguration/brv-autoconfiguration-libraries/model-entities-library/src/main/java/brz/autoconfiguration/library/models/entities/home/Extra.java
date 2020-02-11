@@ -1,4 +1,4 @@
-package brz.server.msmodel.home.persistence.entities;
+package brz.autoconfiguration.library.models.entities.home;
 
 public enum Extra {
 	PARKING,
@@ -7,6 +7,7 @@ public enum Extra {
 	HEATING,
 	GARDEN,
 	SWIMMING_POOL,
+	SMOKE_VENT,
 	TERRACE,
 	BOX_ROOM
 }

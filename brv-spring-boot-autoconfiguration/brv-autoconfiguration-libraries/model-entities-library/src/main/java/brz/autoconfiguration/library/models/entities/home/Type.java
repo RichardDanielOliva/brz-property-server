@@ -1,4 +1,4 @@
-package brz.server.msmodel.home.persistence.entities;
+package brz.autoconfiguration.library.models.entities.home;
 
 public enum Type {
 	INTERMEDIATE_FLOORS,

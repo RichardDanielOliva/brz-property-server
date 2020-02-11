@@ -1,7 +1,7 @@
 package brz.server.msmodel.home.business;
 
-import com.brz.commons.models.entities.util.PropertyListWrapper;
-import com.brz.commons.models.filter.HomeFilter;
+import brz.autoconfiguration.library.models.entities.util.PropertyListWrapper;
+import brz.autoconfiguration.library.models.filter.HomeFilter;
 
 public interface HomeService {
 	PropertyListWrapper findByFilter(HomeFilter homefilter);

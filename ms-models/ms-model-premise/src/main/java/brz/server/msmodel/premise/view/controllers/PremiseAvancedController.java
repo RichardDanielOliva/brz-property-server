@@ -7,9 +7,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.brz.commons.models.entities.util.PropertyListWrapper;
-import com.brz.commons.models.filter.PremiseFilter;
-
+import brz.autoconfiguration.library.models.entities.util.PropertyListWrapper;
+import brz.autoconfiguration.library.models.filter.PremiseFilter;
 import brz.server.msmodel.premise.business.PremiseService;
 
 @RefreshScope
