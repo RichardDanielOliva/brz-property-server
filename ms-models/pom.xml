@@ -1,0 +1,23 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <parent>
+    <groupId>com.brv.server</groupId>
+    <artifactId>brv-server</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  
+  <groupId>brv.ms.models</groupId>
+  <artifactId>brv-ms-models</artifactId>
+  <packaging>pom</packaging>
+  <name>brv-ms-models</name>
+  <version>0.0.1-SNAPSHOT</version>
+  
+  <modules>
+    <module>ms-models-example</module> 
+    <module>ms-model-home</module> 
+    <module>ms-model-office</module>
+    <module>ms-model-premise</module>
+    <module>ms-model-user</module>
+  </modules>
+</project>

@@ -1,0 +1,120 @@
+version: '3.7'
+services:
+  config-server:
+    build: brv-config-server/.
+    # image: config-server:v1
+    ports:
+      - "8888:8888"
+    restart: always
+    networks:
+      - brzserver
+  eureka-server:
+    build: brz-eureka-server/.
+    ports:
+      - "8761:8761"
+    restart: always
+    networks:
+      - brzserver
+  # ms-models
+  ms-model-home:
+    build: ms-models/ms-model-home/.
+    restart: always
+    networks:
+      - brzserver
+    depends_on: 
+      - config-server
+      - eureka-server
+    environment:
+      - "SPRING_PROFILES_ACTIVE=prod"
+  ms-model-office:
+    build: ms-models/ms-model-office/.
+    restart: always
+    networks:
+      - brzserver
+    depends_on: 
+      - config-server
+      - eureka-server
+    environment:
+      - "SPRING_PROFILES_ACTIVE=prod"
+  ms-model-premise:
+    build: ms-models/ms-model-premise/.
+    restart: always
+    networks:
+      - brzserver
+    depends_on: 
+      - config-server
+      - eureka-server
+    environment:
+      - "SPRING_PROFILES_ACTIVE=prod"
+  ms-model-user:
+    build: ms-models/ms-model-user/.
+    restart: always
+    networks:
+      - brzserver
+    depends_on: 
+      - config-server
+      - eureka-server
+    environment:
+      - "SPRING_PROFILES_ACTIVE=prod"
+  # ms-services
+  ms-services-azure-storage:
+    build: ms-services/ms-services-azure-storage/.
+    restart: always
+    networks:
+      - brzserver
+    depends_on: 
+      - config-server
+      - eureka-server
+    environment:
+      - "SPRING_PROFILES_ACTIVE=prod"
+  # Security
+  server-authentification:
+    build: server-authentification/.
+    # image: config-server:v1
+    ports:
+      - "8100:8100"
+    restart: always
+    depends_on: 
+      - eureka-server
+      - config-server
+    environment:
+      - "SPRING_PROFILES_ACTIVE=prod"
+    networks:
+      - brzserver
+  security-oauth:
+    build: brz-security-oauth/.
+    ports:
+      - "9100:9100"
+    restart: always
+    networks:
+      - brzserver
+    environment:
+      - "SPRING_PROFILES_ACTIVE=prod"
+    depends_on: 
+      - eureka-server
+      - config-server
+      - ms-model-user
+      - server-authentification
+  # API-Gateway
+  eureka-zuul:
+    build: brz-eureka-zuul/.
+    ports:
+      - "8090:8090"
+    restart: always
+    networks:
+      - brzserver
+    depends_on: 
+      - config-server
+      - eureka-server
+      - ms-model-user
+      - server-authentification
+      - security-oauth
+      #- servicio-items
+      #- servicio-usuarios
+      #- servicio-oauth
+    environment:
+      - "SPRING_PROFILES_ACTIVE=prod"
+networks:
+  brzserver:
+
+    #brz-eureka-zuul

@@ -1,0 +1,1 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration = brz.autoconfiguration.exceptionhandler.HttpExceptionController
