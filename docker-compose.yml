@@ -77,6 +77,7 @@ services:
     depends_on: 
       - eureka-server
       - config-server
+      - ms-model-user
     environment:
       - "SPRING_PROFILES_ACTIVE=prod"
     networks:
@@ -106,6 +107,9 @@ services:
     depends_on: 
       - config-server
       - eureka-server
+      - ms-model-home
+      - ms-model-premise
+      - ms-model-office
       - ms-model-user
       - server-authentification
       - security-oauth

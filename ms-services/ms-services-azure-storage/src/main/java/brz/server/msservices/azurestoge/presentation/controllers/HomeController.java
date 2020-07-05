@@ -1,6 +1,8 @@
 package brz.server.msservices.azurestoge.presentation.controllers;
 
 import java.net.URI;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -27,9 +29,15 @@ public class HomeController {
     private AzureBlobServices azureBlobServices;
     
     @PostMapping("/upload")
-    public ResponseEntity upload(@RequestParam MultipartFile multipartFile){
-        URI url = azureBlobServices.upload(multipartFile);
-        return ResponseEntity.ok(url);
+    public ResponseEntity upload(@RequestParam("files") List<MultipartFile> multipartFiles){
+    	ArrayList<URI> urls = new ArrayList<URI>();
+    	System.out.println(multipartFiles.size());
+    	for (MultipartFile multipartFile : multipartFiles) {
+    		URI url = azureBlobServices.upload(multipartFile);
+    		System.out.println(url);
+    		urls.add(url);
+		}
+        return ResponseEntity.ok(urls);
     }
     
 	@GetMapping(path = "/",  produces = {MediaType.APPLICATION_JSON_VALUE})

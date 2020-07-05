@@ -8,6 +8,11 @@ import org.springframework.data.mongodb.core.index.GeoSpatialIndexed;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+import brz.autoconfiguration.library.models.entities.util.GeoJsonPointSerializer;
+import brz.autoconfiguration.library.models.entities.util.GeoJsonPointDeserializer;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Property {
@@ -18,6 +23,8 @@ public class Property {
 	private Advertiser advertiser;
 	private List<String> images;
 	
+	@JsonSerialize(using = GeoJsonPointSerializer.class)
+	//@JsonDeserialize(contentUsing = GeoJsonPointDeserializer.class)
 	@GeoSpatialIndexed(type = GeoSpatialIndexType.GEO_2DSPHERE,name = "geometry_index")
 	private GeoJsonPoint geometry;
 	
