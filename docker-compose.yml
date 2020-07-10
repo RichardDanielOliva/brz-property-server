@@ -107,12 +107,6 @@ services:
     depends_on: 
       - config-server
       - eureka-server
-      - ms-model-home
-      - ms-model-premise
-      - ms-model-office
-      - ms-model-user
-      - server-authentification
-      - security-oauth
       #- servicio-items
       #- servicio-usuarios
       #- servicio-oauth
