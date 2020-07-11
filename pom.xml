@@ -18,7 +18,7 @@
 	</parent>
 
 	<modules>
-		<module>brz-eureka-commons</module>
+		<module>brz-ms-commons</module>
 		<module>brv-spring-boot-autoconfiguration</module>
 		<module>brv-config-server</module>
 		<module>brz-eureka-server</module>
