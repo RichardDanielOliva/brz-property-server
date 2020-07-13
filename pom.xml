@@ -19,8 +19,8 @@
 
 	<modules>
 		<module>brz-ms-commons</module>
-		<module>brv-spring-boot-autoconfiguration</module>
-		<module>brv-config-server</module>
+		<module>brz-spring-boot-autoconf</module>
+		<module>brz-config-server</module>
 		<module>brz-eureka-server</module>
         <module>ms-models</module>
         <module>ms-services</module>

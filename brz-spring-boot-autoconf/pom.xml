@@ -13,8 +13,8 @@
   <name>brv-spring-boot-autoconfiguration</name>
   
   <modules>
-  	<module>brv-autoconfiguration-libraries</module> 	
-  	<module>brv-autoconfiguration-ms-staters</module>
-  	<module>brv-autoconfiguration-ac</module>
+  	<module>brz-libraries</module> 	
+  	<module>brz-ms-staters</module>
+  	<module>brz-autoconfiguration</module>
   </modules>
 </project>
