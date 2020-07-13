@@ -13,9 +13,9 @@
   <name>brv-autoconfiguration-autoconfigures</name>
   
   <modules>
-  	<module>documentation-autoconfigure</module>
-    <module>data-rest-documentation-autoconfigure</module>
-    <module>logging-autoconfigure</module>
-    <module>exceptionhandler-autoconfigure</module>
+  	<module>documentation</module>
+    <module>data-rest-documentation</module>
+    <module>logging</module>
+    <module>exceptionhandler</module>
   </modules>
 </project>

@@ -1,5 +1,5 @@
 #!/bin/bash
-#echo "----- CONSTRUYENDO .JAR CON MAVEN -----"
+echo "----- CONSTRUYENDO .JAR CON MAVEN -----"
 mvn install -DskipTests
 echo "----- GENERANDO Y DESPLEGANDO CONTENEDORES DOCKER -----"
 
@@ -19,7 +19,6 @@ docker-compose up -d eureka-zuul
 
 echo "----- DESPLEGANDO CONTENEDORES DOCKER ms 1er nivel models  -----"
 docker-compose up -d ms-model-home ms-model-office ms-model-premise ms-model-user
-
 
 echo "----- DESPLEGANDO CONTENEDORES  PARA SEGURIDAD: server-authentification"
 docker-compose up -d server-authentification

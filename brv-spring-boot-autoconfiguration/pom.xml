@@ -15,6 +15,6 @@
   <modules>
   	<module>brv-autoconfiguration-libraries</module> 	
   	<module>brv-autoconfiguration-ms-staters</module>
-  	<module>brv-autoconfiguration-autoconfigures</module>
+  	<module>brv-autoconfiguration-ac</module>
   </modules>
 </project>
